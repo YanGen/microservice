@@ -15,6 +15,10 @@
 		<junit.version>4.12</junit.version>
 		<log4j.version>1.2.17</log4j.version>
 		<lombok.version>1.16.18</lombok.version>
+		<mysql.version>8.0.17</mysql.version>
+		<druid.version>1.1.10</druid.version>
+		<spring.boot.version>2.1.9.RELEASE</spring.boot.version>
+		<mybatis-plus.version>3.2.0</mybatis-plus.version>
 	</properties>
 
 	<dependencyManagement>
@@ -36,12 +40,12 @@
 			<dependency>
 				<groupId>mysql</groupId>
 				<artifactId>mysql-connector-java</artifactId>
-				<version>5.0.4</version>
+				<version>${mysql.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>com.alibaba</groupId>
 				<artifactId>druid</artifactId>
-				<version>1.0.31</version>
+				<version>${druid.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.mybatis.spring.boot</groupId>
@@ -106,7 +110,8 @@
 		<module>microservicecloud-config-client-3355</module>
 		<module>microservicecloud-config-eureka-client-7001</module>
 		<module>microservicecloud-config-dept-client-8001</module>
-	</modules>
+        <module>microservicecloud-provider-goods-8004</module>
+    </modules>
 
 </project>
 
