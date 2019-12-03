@@ -23,8 +23,6 @@ import java.util.Map;
  * @Version 1.0.0
  **/
 public class BaseService<T extends BaseEntityAndDelete> {
-    @Value(value = "${file.basePath}")
-    private String baseUrl = "";
     protected final BaseMapper<T> mapper;
 
     public BaseService(BaseMapper<T> mapper){
