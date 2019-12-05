@@ -1,14 +1,13 @@
 package com.atguigu.springcloud.controller;
 
-import com.atguigu.springcloud.entities.Dept;
-import com.atguigu.springcloud.service.DeptClientService;
-import com.atguigu.springcloud.service.GoodsClientService;
+import com.atguigu.springcloud.clientController.base.BaseController;
+import com.atguigu.springcloud.clientService.base.BaseServiceApi;
+import com.atguigu.springcloud.clientService.goodsService.GoodsClientService;
+import com.atguigu.springcloud.entities.goods.Goods;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 /**
  * @ClassName GoodsControllerConsumer
@@ -19,14 +18,12 @@ import java.util.List;
  **/
 @RestController
 @RequestMapping("/goods")
-public class GoodsControllerConsumer {
-    @Autowired
+public class GoodsControllerConsumer extends BaseController<Goods> {
+
     private GoodsClientService service;
-
-
-    @RequestMapping(value = "/getAll")
-    public Object getAll()
-    {
-        return this.service.getAll();
+    @Autowired
+    public GoodsControllerConsumer(GoodsClientService service) {
+        super(service);
+        this.service  = service;
     }
 }

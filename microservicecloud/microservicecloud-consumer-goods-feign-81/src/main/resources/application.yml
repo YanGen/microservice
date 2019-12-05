@@ -18,4 +18,4 @@ eureka:
     prefer-ip-address: true     #访问路径可以显示IP地址
 spring:
   application:
-    name: micorservicecloud-consumer-goods81
+    name: micorservicecloud-goods-consumer-81

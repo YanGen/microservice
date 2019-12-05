@@ -1,10 +1,7 @@
 package com.atguigu.springcloud.controller;
 
-import com.atguigu.springcloud.entities.ajax.ResponseResult;
 import com.atguigu.springcloud.entities.goods.Goods;
-import com.atguigu.springcloud.service.BaseService;
 import com.atguigu.springcloud.service.GoodsService;
-import com.atguigu.springcloud.util.ResultGeneratorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -32,10 +29,6 @@ public class GoodsController extends BaseController<Goods> {
         super(service);
     }
 
-    @Override
-    public ResponseResult getAll() {
-        return ResultGeneratorUtil.getResultSuccessWithData("ok");
-    }
 
     @Autowired
 	private DiscoveryClient client;

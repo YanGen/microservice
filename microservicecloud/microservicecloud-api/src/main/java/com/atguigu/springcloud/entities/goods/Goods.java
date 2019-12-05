@@ -16,7 +16,7 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 @EqualsAndHashCode
-@TableName("t_user")
+@TableName("t_goods")
 public class Goods extends BaseEntityAndDelete<Long> {
 
     private String name;

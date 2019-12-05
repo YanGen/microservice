@@ -2,6 +2,7 @@ package com.atguigu.springcloud.service;
 
 import com.atguigu.springcloud.entity.User;
 import com.atguigu.springcloud.mapper.UserMapper;
+import com.atguigu.springcloud.service.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.DigestUtils;

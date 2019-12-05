@@ -38,7 +38,7 @@ spring:
     # 合并多个DruidDataSource的监控数据
     useGlobalDataSourceStat: true
   application:
-    name: microservicecloud-goods8004
+    name: microservicecloud-goods-provider-8004
 
 
 mybatis-plus:

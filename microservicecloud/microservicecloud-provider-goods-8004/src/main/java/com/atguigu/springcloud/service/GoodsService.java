@@ -1,6 +1,7 @@
 package com.atguigu.springcloud.service;
 
 import com.atguigu.springcloud.entities.goods.Goods;
+import com.atguigu.springcloud.service.BaseService;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.springframework.stereotype.Service;
 
