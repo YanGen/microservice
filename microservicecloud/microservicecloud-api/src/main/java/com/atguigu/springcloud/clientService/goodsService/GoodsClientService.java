@@ -2,7 +2,7 @@ package com.atguigu.springcloud.clientService.goodsService;
 
 import com.atguigu.springcloud.entities.goods.Goods;
 import com.atguigu.springcloud.clientService.base.BaseServiceApi;
-import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.cloud.openfeign.FeignClient;
 
 /**
  * @ClassName GoodsClientService
