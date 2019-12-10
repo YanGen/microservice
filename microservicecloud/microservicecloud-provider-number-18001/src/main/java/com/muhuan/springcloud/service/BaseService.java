@@ -10,7 +10,7 @@ import com.muhuan.api.bean.entity.EntityStatus;
 import com.muhuan.api.bean.file.FileSuffixConstant;
 import com.muhuan.api.bean.file.FileUploadStandard;
 import com.muhuan.api.util.StringUtil;
-import com.muhuan.select.build.config.BeanUtil;
+import com.muhuan.springcloud.config.BeanUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.transaction.annotation.Transactional;
 
