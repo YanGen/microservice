@@ -126,6 +126,7 @@
 <!--		<module>microservicecloud-config-dept-client-8001</module>-->
         <module>microservicecloud-provider-goods-8004</module>
         <module>microservicecloud-consumer-goods-feign-81</module>
+        <module>microservicecloud-provider-number-18001</module>
     </modules>
 
 </project>
