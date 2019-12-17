@@ -20,5 +20,6 @@ import lombok.*;
 public class Goods extends BaseEntityAndDelete<Long> {
 
     private String name;
+    private Integer stock;
 
 }

@@ -14,6 +14,11 @@ public class GoodsClientServiceFallbackFactory implements FallbackFactory<GoodsC
 	{
 		return new GoodsClientService() {
 			@Override
+			public ResponseResult deductStock(long id) {
+				return ResultGeneratorUtil.getResultFail("服务器忙");
+			}
+
+			@Override
 			public ResponseResult insert(Goods goods) {
 				return null;
 			}

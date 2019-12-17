@@ -3,11 +3,11 @@ package com.atguigu.springcloud.controller;
 import com.atguigu.springcloud.clientController.base.BaseController;
 import com.atguigu.springcloud.clientService.base.BaseServiceApi;
 import com.atguigu.springcloud.clientService.goodsService.GoodsClientService;
+import com.atguigu.springcloud.entities.ajax.ResponseResult;
 import com.atguigu.springcloud.entities.goods.Goods;
+import com.atguigu.springcloud.util.ResultGeneratorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @ClassName GoodsControllerConsumer
@@ -21,6 +21,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class GoodsControllerConsumer extends BaseController<Goods> {
 
     private GoodsClientService service;
+
+    @PostMapping("/deductStock/{id}")
+    public ResponseResult deductStock(@PathVariable long id){
+        return service.deductStock(id);
+    }
+
     @Autowired
     public GoodsControllerConsumer(GoodsClientService service) {
         super(service);

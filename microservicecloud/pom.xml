@@ -82,6 +82,7 @@
 				<artifactId>log4j</artifactId>
 				<version>${log4j.version}</version>
 			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -127,6 +128,7 @@
         <module>microservicecloud-provider-goods-8004</module>
         <module>microservicecloud-consumer-goods-feign-81</module>
         <module>microservicecloud-provider-number-18001</module>
+        <module>microservicecloud-provider-distributor-9001</module>
     </modules>
 
 </project>

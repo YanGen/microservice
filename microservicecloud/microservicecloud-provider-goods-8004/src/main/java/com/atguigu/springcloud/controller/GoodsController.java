@@ -1,14 +1,14 @@
 package com.atguigu.springcloud.controller;
 
+import com.atguigu.springcloud.cache.MybatisRedisCache;
+import com.atguigu.springcloud.entities.ajax.ResponseResult;
 import com.atguigu.springcloud.entities.goods.Goods;
 import com.atguigu.springcloud.service.GoodsService;
+import com.atguigu.springcloud.util.ResultGeneratorUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,11 +24,17 @@ import java.util.List;
 @RequestMapping("/goods")
 public class GoodsController extends BaseController<Goods> {
 
-
+    private final GoodsService service;
     public GoodsController(GoodsService service) {
         super(service);
+        this.service = service;
     }
 
+    @PostMapping("/deductStock/{id}")
+    public ResponseResult deductStock(@PathVariable long id){
+
+        return service.deductStock(id);
+    }
 
     @Autowired
 	private DiscoveryClient client;
