@@ -11,6 +11,10 @@ spring:
     username: guest
     password: ud@rabbitmq
 
+  mail:
+    host: smtp.163.com  #登录邮箱设置那里可以看到,第一张图所示,SMTP服务器
+    password: yg843042427 #密码是第二张图设置的授权密码.不是邮箱的登录密码
+    username: zorage@163.com #这个是你的邮箱
 
   # springmvc配置(会导致静态资源无法加载，不适合前后端未分离场景业务)
   mvc:

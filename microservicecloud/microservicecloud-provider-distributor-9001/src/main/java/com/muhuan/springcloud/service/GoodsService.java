@@ -4,11 +4,11 @@ import com.atguigu.springcloud.entities.ajax.ResponseResult;
 import com.atguigu.springcloud.entities.goods.Goods;
 import com.atguigu.springcloud.util.ResultGeneratorUtil;
 import com.muhuan.springcloud.mapper.GoodsMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
 
 /**
  * @ClassName GoodService
@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
  **/
 @Service
 public class GoodsService extends BaseService<Goods> {
+    private static final Logger Log = LoggerFactory.getLogger(GoodsService.class);
 
     private final GoodsMapper mapper;
 
@@ -27,11 +28,13 @@ public class GoodsService extends BaseService<Goods> {
         this.mapper = mapper;
     }
     @Transactional
-    public ResponseResult deductStock(long id) {
+    public boolean deductStock(long id) {
         Goods goods = getById(id);
         int stock = goods.getStock() - 1;
         goods.setStock(stock);
         boolean update = update(goods);
-        return ResultGeneratorUtil.getResultSuccess();
+        return update;
     }
+
+
 }

@@ -26,7 +26,7 @@ public class RequestAspect {
     private static long startTime;
     private static long endTime;
 
-    @Pointcut("execution(public * com.atguigu.springcloud.controller.*.*(..))")
+    @Pointcut("execution(public * com.muhuan.springcloud.controller.*.*(..))")
     public void print(){}
 
     @Before("print()")
