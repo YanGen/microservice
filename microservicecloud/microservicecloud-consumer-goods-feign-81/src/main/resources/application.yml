@@ -1,13 +1,9 @@
 server:
   port: 81
-  
 
 feign: 
   hystrix: 
     enabled: true
-
-
-
 eureka:
   client:
     service-url:

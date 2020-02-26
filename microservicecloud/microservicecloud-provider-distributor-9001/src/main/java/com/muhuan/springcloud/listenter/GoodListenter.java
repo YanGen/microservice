@@ -2,12 +2,18 @@ package com.muhuan.springcloud.listenter;
 
 import com.muhuan.springcloud.service.EmailService;
 import com.muhuan.springcloud.service.GoodsService;
+import com.muhuan.springcloud.service.RedisService;
+import com.muhuan.springcloud.util.SMSUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Component;
+
+import java.security.SecureRandom;
+import java.util.Map;
+import java.util.Random;
 
 /**
  * @ClassName GoodListenter
@@ -22,6 +28,8 @@ public class GoodListenter {
     private GoodsService goodsService;
     @Autowired
     private EmailService emailService;
+    @Autowired
+    private RedisService redisService;
 
     private static final Logger Log = LoggerFactory.getLogger(GoodListenter.class);
 
@@ -36,4 +44,6 @@ public class GoodListenter {
         if(!update) text = "减库存失败";
         emailService.sendSimpleEmail(from,to,subject,text);
     }
+
+
 }
