@@ -43,7 +43,7 @@ public class SMSUtil {
         //模板签名短信接口请求地址
         String templateSmsUrl="http://smspaas-gateway.jdcloud.com:9000/HttpSmsMt";
         //模板签名短信接口请求参数
-        String formParam="name=yslhhy&pwd="+pwd+"&rpttype=1&phone="+phone+"&content="+content+"&mttime="+date;
+        String formParam="name=yslhhy&pwd="+pwd+"&rpttype=1&phone="+phone+"&content=【优世联合】"+content+"&mttime="+date;
         //参数名"code"需要根据模板自定义需要替换的参数名称,否则会调用失败
 
         HttpURLConnection connection = (HttpURLConnection) new URL(templateSmsUrl).openConnection();

@@ -26,14 +26,28 @@ public class MassageListenter {
 
 
     @RabbitListener(queues = "messageQueue")
-    public void SMSV() {
-        String yzm = SMSUtil.getYZM(4);
-        redisService.set("test",yzm,60);
-        try {
-            SMSUtil.sendMessage("13580151262",yzm);
-        }catch (Exception e){
-            System.out.println(e.getMessage());
+    public void SMSV(Map<String,Object> map) {
+        String number = (String) map.get("number");
+        String type = (String) map.get("type");
+        if (type.equals("simple")){
+            String content = (String) map.get("content");
+            try {
+                SMSUtil.sendMessage(number, content);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
         }
+        if(type.equals("yzm")){
+            Integer digit = (Integer) map.get("digit");
+            String comtent = "您的验证码是："+SMSUtil.getYZM(digit);
+            redisService.set(number,comtent,60);
+            try {
+                SMSUtil.sendMessage(number,comtent);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+        }
+
     }
 
 
