@@ -19,7 +19,7 @@ public class SMSController {
     @PostMapping("/sendShortMessage")
     public ResponseResult deductStock(){
         Map<String,Object> map = new HashMap<>();
-        map.put("number", "13580151262");
+        map.put("number", "13580xxxxxx");
         map.put("type", "simple"); // simple 普通文本 yzm 验证码
         map.put("content", "这是一段普通文本"); //type 为 simple 时发的是这一段
         map.put("digit", 4);// 如果是验证码要指定位数
